@@ -1,4 +1,11 @@
 import React from 'react'
+import { BsArrowDownRight, BsArrowUpRight } from "react-icons/bs";
+import { Column } from "@ant-design/plots";
+import { Table } from "antd";
+import { columns } from '../utils/Columns';
+import { data1 } from '../utils/Data1';
+import { config } from '../utils/configData';
+
 
 const Dashboard = () => {
   return (
@@ -45,13 +52,13 @@ const Dashboard = () => {
     <div className="mt-4">
       <h3 className="mb-5 title">Income Statics</h3>
       <div>
-        <Column {} />
+        <Column {...config} />
       </div>
     </div>
     <div className="mt-4">
       <h3 className="mb-5 title">Recent Orders</h3>
       <div>
-        <Table columns={} dataSource={} />
+        <Table columns={columns} dataSource={data1} />
       </div>
     </div>
   </div>
