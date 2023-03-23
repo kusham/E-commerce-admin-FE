@@ -1,5 +1,6 @@
 import axios from "axios";
 import { base_url } from "../utils/baseUrl";
+import { config } from "../utils/axiosConfig";
 
 export const login = async (user) => {
   const response = await axios.post(`${base_url}user/admin-login`, user);
@@ -15,5 +16,11 @@ export const getOrder = async (id) => {
     "",
     config
   );
+  return response.data;
+};
+
+export const getOrders = async () => {
+  const response = await axios.get(`${base_url}user/getallorders`, config);
+
   return response.data;
 };
