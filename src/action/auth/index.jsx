@@ -22,3 +22,14 @@ export const login = createAsyncThunk(
       }
     }
   );
+
+  export const getOrders = createAsyncThunk(
+    "order/get-orders",
+    async (thunkAPI) => {
+      try {
+        return await authService.getOrders();
+      } catch (error) {
+        return thunkAPI.rejectWithValue(error);
+      }
+    }
+  );
