@@ -24,3 +24,14 @@ export const createCategory = async (category) => {
   
     return response.data;
   };
+
+export const updateProductCategory = async (category) => {
+    console.log(category);
+    const response = await axios.put(
+      `${base_url}category/${category.id}`,
+      { title: category.pCatData.title },
+      config
+    );
+  
+    return response.data;
+  };
