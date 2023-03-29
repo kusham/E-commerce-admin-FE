@@ -3,6 +3,7 @@ import "./App.css";
 import Login from "./pages/Login";
 import ResetPassword from "./pages/ResetPassword";
 import ForgotPassword from "./pages/ForgotPassword";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
@@ -11,6 +12,9 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+
+        <Route index element={<Dashboard />} />
+
       </Routes>
     </Router>
   );
