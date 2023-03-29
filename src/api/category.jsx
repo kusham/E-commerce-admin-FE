@@ -19,3 +19,8 @@ export const createCategory = async (category) => {
   
     return response.data;
   };
+  export const deleteProductCategory = async (id) => {
+    const response = await axios.delete(`${base_url}category/${id}`, config);
+  
+    return response.data;
+  };
