@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import ResetPassword from "./pages/ResetPassword";
 import ForgotPassword from "./pages/ForgotPassword";
 import Dashboard from "./pages/Dashboard";
+import Customers from "./pages/Customers";
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
 
         <Route index element={<Dashboard />} />
+
+        <Route path="customers" element={<Customers />} />
+
 
       </Routes>
     </Router>
