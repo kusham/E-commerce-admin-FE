@@ -6,6 +6,8 @@ import ForgotPassword from "./pages/ForgotPassword";
 import Dashboard from "./pages/Dashboard";
 import Customers from "./pages/Customers";
 import Orders from "./pages/Orders";
+import ViewOrder from "./pages/ViewOrder";
+
 
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
         <Route path="customers" element={<Customers />} />
 
         <Route path="orders" element={<Orders />} />
+        <Route path="order/:id" element={<ViewOrder />} />
 
 
 
