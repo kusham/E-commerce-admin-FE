@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { createCategory, deleteProductCategory, getProductCategories, updateProductCategory } from "../../api/category";
+import { createCategory, deleteProductCategory, getProductCategories, getProductCategory, updateProductCategory } from "../../api/category";
 
 export const getCategories = createAsyncThunk(
   "productCategory/get-categories",
@@ -39,6 +39,17 @@ export const createCategory = createAsyncThunk(
     async (id, thunkAPI) => {
       try {
         return await deleteProductCategory(id);
+      } catch (error) {
+        return thunkAPI.rejectWithValue(error);
+      }
+    }
+  );
+
+  export const getAProductCategory = createAsyncThunk(
+    "productCategory/get-product-category",
+    async (id, thunkAPI) => {
+      try {
+        return await getProductCategory(id);
       } catch (error) {
         return thunkAPI.rejectWithValue(error);
       }
