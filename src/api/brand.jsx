@@ -22,3 +22,8 @@ export const createBrand = async (brand) => {
   
     return response.data;
   };
+  export const getBrand = async (id) => {
+    const response = await axios.get(`${base_url}brand/${id}`, config);
+  
+    return response.data;
+  };
