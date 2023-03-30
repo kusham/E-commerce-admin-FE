@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { createBrand, getBrand, getBrands, updateBrand } from "../../api/brand";
+import { createBrand, deleteBrand, getBrand, getBrands, updateBrand } from "../../api/brand";
 
 export const getBrands = createAsyncThunk(
   "brand/get-brands",
@@ -39,6 +39,17 @@ export const getABrand= createAsyncThunk(
     async (brand, thunkAPI) => {
       try {
         return await updateBrand(brand);
+      } catch (error) {
+        return thunkAPI.rejectWithValue(error);
+      }
+    }
+  );
+
+  export const deleteABrands = createAsyncThunk(
+    "brand/delete-brand",
+    async (id, thunkAPI) => {
+      try {
+        return await deleteBrand(id);
       } catch (error) {
         return thunkAPI.rejectWithValue(error);
       }
