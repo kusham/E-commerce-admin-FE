@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { createCategory, deleteProductCategory, getProductCategories, getProductCategory, updateProductCategory } from "../../api/category";
+import { createCategory, deleteProductCategory, getProductCategories, getProductCategory, updateProductCategory } from "../../api/productCategory";
 
 export const getCategories = createAsyncThunk(
   "productCategory/get-categories",
