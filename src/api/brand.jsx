@@ -12,3 +12,13 @@ export const createBrand = async (brand) => {
   
     return response.data;
   };
+
+  export const updateBrand = async (brand) => {
+    const response = await axios.put(
+      `${base_url}brand/${brand.id}`,
+      { title: brand.brandData.title },
+      config
+    );
+  
+    return response.data;
+  };
