@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { createBrand, getBrand, getBrands } from "../../api/brand";
+import { createBrand, getBrand, getBrands, updateBrand } from "../../api/brand";
 
 export const getBrands = createAsyncThunk(
   "brand/get-brands",
@@ -28,6 +28,17 @@ export const getABrand= createAsyncThunk(
     async (brandData, thunkAPI) => {
       try {
         return await createBrand(brandData);
+      } catch (error) {
+        return thunkAPI.rejectWithValue(error);
+      }
+    }
+  );
+
+  export const updateABrand = createAsyncThunk(
+    "brand/update-brand",
+    async (brand, thunkAPI) => {
+      try {
+        return await updateBrand(brand);
       } catch (error) {
         return thunkAPI.rejectWithValue(error);
       }
