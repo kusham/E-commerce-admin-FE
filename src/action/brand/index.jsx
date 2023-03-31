@@ -45,7 +45,7 @@ export const getABrand= createAsyncThunk(
     }
   );
 
-  export const deleteABrands = createAsyncThunk(
+  export const deleteABrand = createAsyncThunk(
     "brand/delete-brand",
     async (id, thunkAPI) => {
       try {
