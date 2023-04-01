@@ -1,5 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { createColor, getColor, getColors, updateColor } from "../../api/color";
+import {
+  createColor,
+  deleteColor,
+  getColor,
+  getColors,
+  updateColor,
+} from "../../api/color";
 
 export const getColors = createAsyncThunk(
   "color/get-colors",
@@ -23,23 +29,34 @@ export const createColor = createAsyncThunk(
 );
 
 export const getAColor = createAsyncThunk(
-    "color/get-color",
-    async (id, thunkAPI) => {
-      try {
-        return await getColor(id);
-      } catch (error) {
-        return thunkAPI.rejectWithValue(error);
-      }
+  "color/get-color",
+  async (id, thunkAPI) => {
+    try {
+      return await getColor(id);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
     }
-  );
+  }
+);
 
-  export const updateAColors = createAsyncThunk(
-    "color/update-color",
-    async (color, thunkAPI) => {
-      try {
-        return await updateColor(color);
-      } catch (error) {
-        return thunkAPI.rejectWithValue(error);
-      }
+export const updateAColors = createAsyncThunk(
+  "color/update-color",
+  async (color, thunkAPI) => {
+    try {
+      return await updateColor(color);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
     }
-  );
+  }
+);
+
+export const deleteAColor = createAsyncThunk(
+  "color/delete-color",
+  async (id, thunkAPI) => {
+    try {
+      return await deleteColor(id);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
+  }
+);
