@@ -23,3 +23,9 @@ export const updateColor = async (color) => {
   
     return response.data;
   };
+
+  export const getColor = async (id) => {
+    const response = await axios.get(`${base_url}color/${id}`, config);
+  
+    return response.data;
+  };
