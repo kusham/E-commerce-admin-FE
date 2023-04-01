@@ -1,5 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+export const resetState = createAction("Reset_all");
+
+const initialState = {
+  colors: [],
+  isError: false,
+  isLoading: false,
+  isSuccess: false,
+  message: "",
+};
+
 export const colorSlice = createSlice({
     name: "colors",
     initialState,
