@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { createColor, getColor, getColors } from "../../api/color";
+import { createColor, getColor, getColors, updateColor } from "../../api/color";
 
 export const getColors = createAsyncThunk(
   "color/get-colors",
@@ -27,6 +27,17 @@ export const getAColor = createAsyncThunk(
     async (id, thunkAPI) => {
       try {
         return await getColor(id);
+      } catch (error) {
+        return thunkAPI.rejectWithValue(error);
+      }
+    }
+  );
+
+  export const updateAColors = createAsyncThunk(
+    "color/update-color",
+    async (color, thunkAPI) => {
+      try {
+        return await updateColor(color);
       } catch (error) {
         return thunkAPI.rejectWithValue(error);
       }
