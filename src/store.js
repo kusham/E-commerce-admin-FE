@@ -4,6 +4,8 @@ import { customerSlice } from "./reducers/customerReducers";
 import { productSlice } from "./reducers/productReducers";
 import { categorySlice } from "./reducers/productCategoryReducers";
 import { brandSlice } from "./reducers/brandReducers";
+import { colorSlice } from "./reducers/ColorReducers";
+import { uploadSlice } from "./reducers/uploadReducer";
 export const store = configureStore({
   reducer: {
     auth: authSlice,
@@ -11,6 +13,8 @@ export const store = configureStore({
     product: productSlice,
     pCategory: categorySlice,
     brand: brandSlice,
+    color: colorSlice,
+    upload: uploadSlice,
 
   },
 });
