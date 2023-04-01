@@ -29,3 +29,9 @@ export const updateColor = async (color) => {
   
     return response.data;
   };
+
+  export const deleteColor = async (id) => {
+    const response = await axios.delete(`${base_url}color/${id}`, config);
+  
+    return response.data;
+  };
