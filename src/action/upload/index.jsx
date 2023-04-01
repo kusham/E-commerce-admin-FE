@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { uploadImg } from "../../api/upload";
+import { deleteImg, uploadImg } from "../../api/upload";
 
 export const uploadImg = createAsyncThunk(
   "upload/images",
@@ -15,3 +15,14 @@ export const uploadImg = createAsyncThunk(
     }
   }
 );
+
+export const deleteImg = createAsyncThunk(
+    "delete/images",
+    async (id, thunkAPI) => {
+      try {
+        return await deleteImg(id);
+      } catch (error) {
+        return thunkAPI.rejectWithValue(error);
+      }
+    }
+  );
