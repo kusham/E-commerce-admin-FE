@@ -13,3 +13,13 @@ export const createColor = async (color) => {
 
   return response.data;
 };
+
+export const updateColor = async (color) => {
+    const response = await axios.put(
+      `${base_url}color/${color.id}`,
+      { title: color.colorData.title },
+      config
+    );
+  
+    return response.data;
+  };
