@@ -1,5 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState = {
+    images: [],
+    isError: false,
+    isLoading: false,
+    isSuccess: false,
+    message: "",
+  };
+  
 export const uploadSlice = createSlice({
   name: "imaegs",
   initialState,
