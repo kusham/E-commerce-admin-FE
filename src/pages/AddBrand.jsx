@@ -6,6 +6,7 @@ import * as yup from "yup";
 import { useFormik } from "formik";
 import { createBrand, getABrand, updateABrand } from "../action/brand";
 import { resetState } from "../reducers/brandReducers";
+import CustomInput from "../components/CustomInput";
 
 let schema = yup.object().shape({
   title: yup.string().required("Brand Name is Required"),
